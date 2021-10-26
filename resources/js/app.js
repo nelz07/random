@@ -8,7 +8,7 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 window.Swal = require('sweetalert2');
-
+window.Vue.config.ignoredElements = [ 'css-doodle' ];
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -21,7 +21,10 @@ window.Swal = require('sweetalert2');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('family-feud', require('./components/FamilyComponent.vue').default);
 Vue.component('random-picker', require('./components/RandomPickerComponent.vue').default);
+Vue.component('branch-picker', require('./components/BranchComponent.vue').default);
+Vue.component('timer', require('./components/TimerComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

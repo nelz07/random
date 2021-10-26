@@ -11,13 +11,11 @@ a:hover {
   -moz-transition: 0.2s;s
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
-}
-
-a:focus,
-a:hover {
-  opacity: .7;
   text-decoration: none;
 }
+
+
+
 
 /* Custom default button */
 .btn-default,

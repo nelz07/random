@@ -13,10 +13,9 @@ class PersonController extends Controller
             'list'=>'required | mimes:xlsx,xls,csv'
         ]);
 
-
         $file = $request->file('list');
         Excel::import(new PersonsImport, $file);
-
+        return;
     }
 
     public function showForm(){

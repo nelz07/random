@@ -31,7 +31,7 @@
 
 <body >
 <div id="app">
-    <random-picker></random-picker>
+    <random-picker level="{{$level}}"></random-picker>
 </div>
 <!-- jQuery -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

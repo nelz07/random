@@ -3,6 +3,7 @@
 namespace App\Imports;
 
 use App\Models\Person;
+use App\Models\Client;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\withHeadingRow;
 
@@ -15,10 +16,10 @@ class PersonsImport implements ToModel, withHeadingRow
     */
     public function model(array $row)
     {
-        return new Person([
+         return new Client([
             'name'=>$row['name'],
-            'phone'=>$row['phone'],
             'branch'=>$row['branch']
         ]);
+        
     }
 }

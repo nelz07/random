@@ -16,8 +16,13 @@ class CreatePeopleTable extends Migration
         Schema::create('people', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('phone');
             $table->string('branch');
+            $table->string('area_name')->nullable();
+            $table->integer('area_id')->nullable();
+            $table->string('region_name')->nullable();
+            $table->integer('region_id')->nullable();
+            $table->boolean('picked')->default(false);
+            $table->boolean('raffle')->default(false);
             $table->timestamps();
         });
     }

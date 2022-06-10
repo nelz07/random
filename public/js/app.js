@@ -2734,7 +2734,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['level'],
+  props: ['type', 'level'],
   mounted: function mounted() {},
   data: function data() {
     return {
@@ -2745,7 +2745,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     link: function link() {
-      return 'pick/' + this.level;
+      return '/get/' + this.type + '/' + this.level;
     }
   },
   methods: {
@@ -2756,7 +2756,7 @@ __webpack_require__.r(__webpack_exports__);
       this.hidden = false;
       axios.get(this.link).then(function (res) {
         _this.winner = res.data.winner;
-        var content = '<video playsinline autoplay loop id="bgvid"><source src="/img/video.mp4" type=video/mp4></video><div class="viewport-header"><br><h2 class="white">You have been chosen' + ' <br>' + _this.winner.name + '</h2></div>';
+        var content = '<video playsinline autoplay loop id="bgvid"><source src="/img/video.mp4" type=video/mp4></video><div class="viewport-header"><br><h2 class="white">You have been chosen' + ' <br>' + _this.winner.name + ' - ' + _this.winner.branch + '</h2></div>';
         _this.htmlContent = content;
         setTimeout(function () {
           _this.hidden = true;

@@ -6,8 +6,10 @@ use App\Models\Person;
 use App\Models\Client;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\withHeadingRow;
+use Maatwebsite\Excel\Concerns\WithBatchInserts;
+use Maatwebsite\Excel\Concerns\WithChunkReading;
 
-class PersonsImport implements ToModel, withHeadingRow
+class PersonsImport implements ToModel, withHeadingRow, WithBatchInserts, WithChunkReading
 {
     /**
     * @param array $row
@@ -18,8 +20,20 @@ class PersonsImport implements ToModel, withHeadingRow
     {
          return new Client([
             'name'=>$row['name'],
-            'branch'=>$row['branch']
+            'branch'=>$row['branch'],
+            'region'=>$row['region'],
+            'area'=>$row['area'],
         ]);
         
     }
+    public function batchSize(): int
+    {
+        return 1000;
+    }
+    
+    public function chunkSize(): int
+    {
+        return 1000;
+    }
+
 }

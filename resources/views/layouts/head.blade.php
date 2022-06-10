@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
     <!-- Custom styles for this template -->
-    <link href="{{ asset('style.css') }}" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
@@ -29,9 +29,11 @@
     <![endif]-->
 </head>
 
-<body >
+<body>
 <div id="app">
-    <random-picker type="{{$type}}" level="{{$level}}"></random-picker>
+
+@yield('content')
+
 </div>
 <!-- jQuery -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -40,13 +42,18 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <!-- Plugins and Custom JavaScript -->
-<script src=></script>
-
-<!-- script src="{{ asset('js/device.min.js') }}"></script>
-<script src="{{ asset('js/jquery.mb.YTPlayer.js') }}"></script>
-<script src="{{ asset('js/custom.js') }}"></script> -->
+<script src="js/device.min.js"></script>
+<script src="js/jquery.mb.YTPlayer.js"></script>
+<script src="js/custom.js"></script>
 
 
 
 </body>
 </html>
+
+
+
+
+
+
+

@@ -9,6 +9,6 @@ class Client extends Model
 {
     use HasFactory;
 
-    protected $fillable =['name', 'branch','picked'];
+    protected $fillable =['name', 'branch','picked','region','area'];
     protected $casts = ['picked' => 'boolean'];
 }

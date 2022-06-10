@@ -17,6 +17,8 @@ class CreateClientsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('branch');
+            $table->string('region')->nullable();
+            $table->string('area')->nullable();
             $table->boolean('picked')->default(false);
             $table->timestamps();
         });
